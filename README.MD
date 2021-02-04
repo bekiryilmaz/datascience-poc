@@ -1,2 +1,2 @@
 # datascience-ooptutorial
-A repository for practicing data science and algorithms
+A repository for practicing data science algorithms
