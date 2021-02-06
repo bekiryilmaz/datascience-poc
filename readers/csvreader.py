@@ -17,7 +17,7 @@ def read_dataset(datasetPath):
         index=0;
         for row in csvreader:
             print(row[0]);
-    return _dataset;    
+    return _dataset;
 
 def main():
     read_dataset("datasets/bank/bank-full.csv");
