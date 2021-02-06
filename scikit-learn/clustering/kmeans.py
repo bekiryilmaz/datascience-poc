@@ -1,26 +1,23 @@
 #author: Bekir Yılmaz
-#csv reader with pandas example
+#scikit-learn kmeans clustering example
 #06.02.2021
-import os;
-import csv;
-import time;
-import _datetime;
-import math;
-from array import *;
-import random;
 import pandas as pd;
-
-__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
-
-def read_dataset(datasetPath):
-    path=os.path.join(__location__, datasetPath);
-    _dataset=pd.read_csv(path, sep=',',encoding='utf-8');
-    print(_dataset.columns);
-    print(_dataset);
-    return _dataset;    
+from sklearn.cluster import KMeans;
+import numpy as np;
 
 def main():
-    read_dataset("dataset/tripadvisor_review.csv");
+    #data
+    array=np.array([[1,2],[1,4],[4,9],[12,2]]);
+    
+    #do clustering 
+    kmeans=KMeans(n_clusters=3).fit(array);
+    
+    #show clusters of all points
+    print(kmeans.labels_);
+    
+    #predict new points
+    prediction=kmeans.predict([[0,0],[13,4]]);
+    print(prediction);
 
 if __name__ == "__main__":
     main();
